@@ -27,18 +27,17 @@
 
 ### items テーブル
 
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| image            | text       | null: false                    |
-| item_name        | string     | null: false                    |
-| description      | text       | null: false                    |
-| price            | integer    | null: false                    |
-| shipping_cost_id | integer    | null: false                    |
-| prefecture_id    | integer    | null: false                    |
-| shipping_days_id | integer    | null: false                    |
-| condition_id     | integer    | null: false                    |
-| category_id      | integer    | null: false                    |
-| user_id (seller) | references | null: false, foreign_key: true |
+| Column           | Type       | Options                                   |
+| ---------------- | ---------- | ----------------------------------------- |
+| item_name        | string     | null: false                               |
+| description      | text       | null: false                               |
+| price            | integer    | null: false                               |
+| shipping_cost_id | integer    | null: false                               |
+| prefecture_id    | integer    | null: false                               |
+| shipping_days_id | integer    | null: false                               |
+| condition_id     | integer    | null: false                               |
+| category_id      | integer    | null: false                               |
+| user_id (seller) | references | null: falsenull: false, foreign_key: true |
 
 #### Association
 
@@ -47,6 +46,8 @@
 - has_one :purchase
 
 - has_many :comments
+
+- has_one_attached :image
 
   
 
