@@ -37,7 +37,7 @@
 | shipping_days_id | integer    | null: false                               |
 | condition_id     | integer    | null: false                               |
 | category_id      | integer    | null: false                               |
-| user_id (seller) | references | null: falsenull: false, foreign_key: true |
+| user (seller)    | references | null: falsenull: false, foreign_key: true |
 
 #### Association
 
@@ -61,7 +61,7 @@
 | address_1     | string     | null: false                    |
 | address_2     | string     |                                |
 | telephone     | string     | null: false                    |
-| user_id       | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 
 #### Association
 
@@ -71,11 +71,11 @@
 
 ### purchases テーブル
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| user_id (buyer) | references | null: false, foreign_key: true |
-| item_id         | references | null: false, foreign_key: true |
-| address_id      | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user (buyer) | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
+| address      | references | null: false, foreign_key: true |
 
 #### Association
 
@@ -87,11 +87,11 @@
 
 ### comments テーブル(追加実装用)
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| text       | text       | null: false                    |
-| user_id    | references | null: false, foreign_key: true |
-| product_id | references | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| text    | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| product | references | null: false, foreign_key: true |
 
 #### Association
 
