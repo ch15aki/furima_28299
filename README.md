@@ -21,7 +21,7 @@
 
 - has_many :items
 - has_many :comments
-- has_many :purchases
+- has_many :purchase_historys
 
 
 
@@ -43,7 +43,7 @@
 
 - belongs_to :user
 
-- has_one :purchase
+- has_one :purchase_history
 
 - has_one :address
 
@@ -67,11 +67,11 @@
 
 #### Association
 
-- has_one :item
+- belongs_to :item
 
 
 
-### purchases テーブル
+### purchase_historys テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
@@ -81,9 +81,11 @@
 #### Association
 
 - belongs_to :user
-- has_one :item
+
+- belongs_to :item
+
   
-  
+
 ### comments テーブル(追加実装用)
 
 | Column  | Type       | Options                        |
