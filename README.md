@@ -77,16 +77,13 @@
 | ------------ | ---------- | ------------------------------ |
 | user (buyer) | references | null: false, foreign_key: true |
 | item         | references | null: false, foreign_key: true |
-| address      | references | null: false, foreign_key: true |
 
 #### Association
 
 - belongs_to :user
 - has_one :item
-- has_one :address
-
-
-
+  
+  
 ### comments テーブル(追加実装用)
 
 | Column  | Type       | Options                        |
@@ -99,3 +96,4 @@
 
 - belongs_to :user
 - belongs_to :product
+
