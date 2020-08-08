@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # ログインをしていないユーザーはログイン画面に遷移
-  before_action :authenticate_user!
   # deviseにストロングパラメーターを設定
   before_action :configure_permitted_parameters, if: :devise_controller?
 
