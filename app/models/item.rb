@@ -12,8 +12,9 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :item_name, :description, :image
-    validates :price, format: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
-    validates :prefecture, :shipping_cost, :shipping_day, :condition, :category, format: { message: 'select' }
   end
+
+  validates :prefecture, :shipping_cost, :shipping_day, :condition, :category, numericality: { message: 'select' }
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
 
 end
