@@ -72,3 +72,6 @@ end
 #ActiveStorage導入
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+
+#ActiveHashの導入
+gem 'active_hash'
