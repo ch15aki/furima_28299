@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  # ログインユーザーのみが商品出品ページに遷移
+  before_action :move_to_index, except: :index
+
   def index
   end
 
@@ -21,4 +24,11 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :shipping_cost_id, :prefecture_id, :shipping_day_id, :condition_id, :category_id, :image).merge(user_id: current_user.id)
   end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+
 end
