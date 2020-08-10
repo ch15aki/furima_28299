@@ -11,10 +11,9 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :prefecture, :shipping_cost, :shipping_days, :condition, :category
+    validates :item_name, :description, :image
+    validates :price, format: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
+    validates :prefecture, :shipping_cost, :shipping_day, :condition, :category, format: { message: 'select' }
   end
 
-  with_options numericality: { other_than: 1 } do
-    validates :prefecture_id, :shipping_cost_id, :shipping_days_id, :condition_id, :category_id
-  end
 end
