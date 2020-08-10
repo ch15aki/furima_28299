@@ -15,6 +15,5 @@ class Item < ApplicationRecord
   end
 
   validates :prefecture, :shipping_cost, :shipping_day, :condition, :category, numericality: { message: 'select' }
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
-
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is out of setting range' }
 end
