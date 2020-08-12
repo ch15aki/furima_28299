@@ -1,13 +1,13 @@
 FactoryBot.define do
   factory :item do
-    item_name { Faker::String.random }
-    description { Faker::Lorem.sentence }
-    price { Faker::Number.within(range: 300..9_999_999) }
-    shipping_cost_id { Faker::Number.within(range: 1..2) }
-    prefecture_id { Faker::Number.within(range: 1..47) }
-    shipping_day_id { Faker::Number.within(range: 1..3) }
-    condition_id { Faker::Number.within(range: 1..6) }
-    category_id { Faker::Number.within(range: 1..10) }
+    item_name { 'グルーツバンド' }
+    description { '家トレで使える最強トレーニングバンドのセット！' }
+    price { 10_000 }
+    shipping_cost_id { 1 }
+    prefecture_id { 1 }
+    shipping_day_id { 1 }
+    condition_id { 1 }
+    category_id { 1 }
     association :user
   end
 end
