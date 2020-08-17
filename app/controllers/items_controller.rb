@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # ログインユーザーのみが商品出品ページに遷移
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -13,10 +13,14 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+      render :show
     else
       render :new
     end
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   private
