@@ -39,7 +39,6 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   private
