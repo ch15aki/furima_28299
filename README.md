@@ -21,7 +21,7 @@
 
 - has_many :items
 - has_many :comments
-- has_many :purchase_histories
+- has_many :order
 
 
 
@@ -43,7 +43,7 @@
 
 - belongs_to :user
 
-- has_one :purchase_history
+- has_one :order
 
 - has_one :address
 
@@ -71,7 +71,7 @@
 
 
 
-### purchase_historys テーブル
+### orders テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
