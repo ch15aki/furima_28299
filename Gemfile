@@ -75,3 +75,6 @@ gem 'image_processing', '~> 1.2'
 
 #ActiveHashの導入
 gem 'active_hash'
+
+#PAY.JPの導入
+gem 'payjp'
