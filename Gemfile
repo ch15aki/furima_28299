@@ -64,9 +64,11 @@ gem 'devise'
 #デバッグツール
 gem 'pry-rails'
 
-#Heroku保存時の調整Gem
 group :production do
+  #Heroku保存時の調整Gem
   gem 'rails_12factor'
+  # Unicornの設定
+  gem 'unicorn', '5.4.1'
 end
 
 #ActiveStorage導入
