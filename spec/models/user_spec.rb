@@ -66,21 +66,21 @@ RSpec.describe User, type: :model do
       @user.password = '123456'
       @user.password_confirmation = '123456'
       @user.valid?
-      expect(@user.errors.full_messages).to include('Password is valid. Input half-width alphanumeric characters.')
+      expect(@user.errors.full_messages).to include('Password is invalid. Input half-width alphanumeric characters.')
     end
 
     it 'passwordは英字のみだと登録できない' do
       @user.password = 'abcdef'
       @user.password_confirmation = 'abcdef'
       @user.valid?
-      expect(@user.errors.full_messages).to include('Password is valid. Input half-width alphanumeric characters.')
+      expect(@user.errors.full_messages).to include('Password is invalid. Input half-width alphanumeric characters.')
     end
 
     it 'passwordは全角英字だと登録できない' do
       @user.password = 'ａbｃｄｅf'
       @user.password_confirmation = 'ａbｃｄｅf'
       @user.valid?
-      expect(@user.errors.full_messages).to include('Password is valid. Input half-width alphanumeric characters.')
+      expect(@user.errors.full_messages).to include('Password is invalid. Input half-width alphanumeric characters.')
     end
 
     # 本人情報確認
