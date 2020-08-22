@@ -21,7 +21,7 @@
 
 - has_many :items
 - has_many :comments
-- has_many :purchase_histories
+- has_many :order
 
 
 
@@ -43,7 +43,7 @@
 
 - belongs_to :user
 
-- has_one :purchase_history
+- has_one :order
 
 - has_one :address
 
@@ -62,8 +62,8 @@
 | city_suburb   | string     | null: false                    |
 | house_number  | string     | null: false                    |
 | building_name | string     |                                |
-| telephone     | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
+| phone_number  | string     | null: false                    |
+| item          | references | null: false, foreign_key: true |
 
 #### Association
 
@@ -71,7 +71,7 @@
 
 
 
-### purchase_historys テーブル
+### orders テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |

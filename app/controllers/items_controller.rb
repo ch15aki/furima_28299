@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  # ログインユーザーのみが商品出品ページに遷移
   before_action :move_to_index, except: [:index, :show]
   before_action :set_item, only: [:show, :edit]
 
@@ -16,7 +15,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path(@item.id)
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -37,7 +36,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path(@item.id)
     else
-      render :edit
+      render 'edit'
     end
   end
 
