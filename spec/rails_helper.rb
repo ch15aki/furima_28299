@@ -33,7 +33,6 @@ end
 RSpec.configure do |config|
   config.include SignInSupport
   # paperclip file uploadテスト用
-  # rspec内で、ファイルアップロードのテストに使用する
   config.include ActionDispatch::TestProcess
 
   # factoryBot内での呼び出し
