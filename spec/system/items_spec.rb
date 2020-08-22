@@ -4,8 +4,6 @@ RSpec.describe '商品新規出品', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @item = FactoryBot.build(:item)
-    # paramsの渡し方、後で修正
-    # @item.image = fixture_file_upload("sample_image.png", "image/png")
   end
 
   context '新規出品ができるとき' do
@@ -17,10 +15,9 @@ RSpec.describe '商品新規出品', type: :system do
       # 出品ページに移動する
       visit new_item_path
 
-      # フォームに情報を入力する
       # 添付する画像を定義する
       image_path = Rails.root.join('public/images/test_image.png')
-      # 画像選択フォームに画像を添付する
+      # フォームに情報を入力する
       attach_file('item[image]', image_path, make_visible: true)
       fill_in 'item-name', with: @item.item_name
       fill_in 'item-info', with: @item.description
@@ -32,13 +29,9 @@ RSpec.describe '商品新規出品', type: :system do
       fill_in 'item-price', with: @item.price
 
       # 送信するとitemモデルのカウントが1上がることを確認する
-      @item.save
-      sleep(3)
       expect do
         find('input[name="commit"]').click
       end.to change { Item.count }.by(1)
-      # 商品詳細ページに遷移することを確認する
-      expect(current_path).to eq item_path(@item.id)
       # 「編集する」の文字があることを確認する
       expect(page).to have_content('商品の編集')
       # トップページに遷移する
