@@ -78,3 +78,6 @@ gem 'active_hash'
 
 #PAY.JPの導入
 gem 'payjp'
+
+#S3の導入
+gem "aws-sdk-s3", require: false
