@@ -1,8 +1,8 @@
 if (document.URL.match( /items/ ) && document.URL.match( /new/ ) || document.URL.match( /edit/ )){
   window.addEventListener('load', function(){
-    let priceInput = document.getElementById("item-price")
-    let addTaxPrice = document.getElementById("add-tax-price")
-    let profitPrice = document.getElementById("profit")
+    let priceInput = document.getElementById("item-price");
+    let addTaxPrice = document.getElementById("add-tax-price");
+    let profitPrice = document.getElementById("profit");
     // 販売手数料10%
     const tax = 0.1;
   
@@ -26,8 +26,8 @@ if (document.URL.match( /items/ ) && document.URL.match( /new/ ) || document.URL
         addTaxPrice.innerHTML = ' ー ';
         profitPrice.innerHTML = ' ー ';
       }
-        console.log(addTaxPrice.innerHTML)
-        console.log(profitPrice.innerHTML)
+        console.log(addTaxPrice.innerHTML);
+        console.log(profitPrice.innerHTML);
     });
   });
 }
