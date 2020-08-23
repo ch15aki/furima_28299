@@ -66,7 +66,7 @@ gem 'pry-rails'
 
 group :production do
   #Heroku保存時の調整Gem
-  # gem 'rails_12factor'
+  gem 'rails_12factor'
   # Unicornの設定
   gem 'unicorn', '5.4.1'
 end
